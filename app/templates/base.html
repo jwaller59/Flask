@@ -1,0 +1,39 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block title %}
+    {% if title %}{{title}} - Jarvis{% else %} Welcome to Jarvis{% endif %}
+{% endblock %}
+
+{% block navbar %}
+    <nav class="navbar navbar-default">
+        <div class='container'>
+            <div class ='navbar-header'>
+                <button type="button" class="navbar-toggle collapsed" data-toggle='collapse' data-target='#bs-example-navbar-collapse-1' aria-expanded="false">
+                    <span class="sr-only">Toggle Navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/index">Jarvis</a>
+                <select class='browser navbar-default custom-select'>
+                    <option selected>FC</option>
+                    <option value='LTN2'>LTN2</option>
+                    <option value='LTN1'>LTN1</option>
+                    <option value='BHX1'>BHX1</option>
+                    <option value='EDI4'>EDI4</option>
+                    <option value='GLA1'>GLA1</option>
+                </select>
+            </div>
+            <div class ="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href='/pick'>Pick</a></li>
+                    <li><a href='/pack'>Pack</a></li>
+                    <li><a href='/stow'>Stow</a></li>
+                    <li><a href='/receive'>Receive</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+{% endblock %}
+
+{% block app_content %}{% endblock %}
