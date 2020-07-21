@@ -1,9 +1,10 @@
 {% extends 'bootstrap/base.html' %}
-
+<head>
 {% block title %}
+    <link rel="style" href="{{ url_for('static', filename='style.css') }}">
     {% if title %}{{title}} - Jarvis{% else %} Welcome to Jarvis{% endif %}
 {% endblock %}
-
+</head>
 {% block navbar %}
     <nav class="navbar navbar-default">
         <div class='container'>
@@ -35,5 +36,6 @@
         </div>
     </nav>
 {% endblock %}
-
+{% block content%}
 {% block app_content %}{% endblock %}
+{% endblock %}

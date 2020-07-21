@@ -1,5 +1,6 @@
-from flask import render_template
+from flask import render_template, json, url_for
 from app import app
+import os
 
 @app.route('/')
 @app.route('/index')
@@ -13,7 +14,10 @@ def main():
 
 @app.route('/pack')
 def pack():
-    return render_template('Pack.html', title='Jarvis - Pack')
+
+    jsonData = os.path.join(app.static_folder, 'multisltn2cycle.json')
+    with open(jsonData) as data_file:
+        data = json.load(data_file)
 
 @app.route('/pick')
 def pick():
@@ -26,4 +30,6 @@ def stow():
 @app.route('/receive')
 def receive():
     return render_template('Receive.html', title='Jarvis - Receive')
+
+
 

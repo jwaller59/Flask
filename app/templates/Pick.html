@@ -1,6 +1,17 @@
 {% extends "base.html" %}
 
 {% block app_content %}
+<head>
+    <link rel="style" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"></script>
+</head>
 
-<h1> Hi, Welcome to Pick!</h1>
+<div class="intro">
+    <h1> Hi, Welcome to Pick!</h1>
+</div>
+<div class='Chart1' style="position: left; margin-right: auto; height:40vh; width:30vw">
+    <canvas id="myChart" width="450" height="600"></canvas>
+</div>
+    <script src="{{url_for('static', filename='Pick.js')}}"></script>"
+
 {% endblock %}
